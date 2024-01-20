@@ -11,7 +11,8 @@ import co.tiagoaguiar.netflixremake.model.Category
 class CategoryAdapter(private val categories: List<Category>) :
     RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.category_item, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.category_item, parent, false)
         return CategoryViewHolder(view)
     }
 
@@ -30,7 +31,7 @@ class CategoryAdapter(private val categories: List<Category>) :
             txtTitle.text = category.name
 
             val rv: RecyclerView = itemView.findViewById(R.id.rv_category)
-            val adapter = MovieAdapter(category.movies)
+            val adapter = MovieAdapter(category.movies, R.layout.movie_item)
             rv.layoutManager = LinearLayoutManager(itemView.context, RecyclerView.HORIZONTAL, false)
             rv.adapter = adapter
         }
