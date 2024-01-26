@@ -1,3 +1,3 @@
 package co.tiagoaguiar.netflixremake.model
 
-data class Movie(val coverUrl: String)
+data class Movie(val id: Int, val coverUrl: String)

@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import co.tiagoaguiar.netflixremake.model.Category
 
-class CategoryAdapter(private val categories: List<Category>) :
+class CategoryAdapter(
+    private val categories: List<Category>,
+    private val onItemClickListener: ((Int) -> Unit)? = null
+) :
     RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val view =
@@ -31,7 +34,7 @@ class CategoryAdapter(private val categories: List<Category>) :
             txtTitle.text = category.name
 
             val rv: RecyclerView = itemView.findViewById(R.id.rv_category)
-            val adapter = MovieAdapter(category.movies, R.layout.movie_item)
+            val adapter = MovieAdapter(category.movies, R.layout.movie_item, onItemClickListener)
             rv.layoutManager = LinearLayoutManager(itemView.context, RecyclerView.HORIZONTAL, false)
             rv.adapter = adapter
         }
