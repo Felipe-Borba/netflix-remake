@@ -31,6 +31,7 @@
             app:titleTextColor="@color/white" />
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:src="@drawable/ic_play"
@@ -111,5 +112,13 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_fixed"
             tools:listitem="@layout/movie_item_similar" />
 
+        <ProgressBar
+            android:id="@+id/movie_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/movie_rv_similar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

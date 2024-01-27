@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(), CategoryTask.Callback {
 
         val rv: RecyclerView = findViewById(R.id.rv_main)
         adapter = CategoryAdapter(categories) { id ->
-            val intent = Intent(this@MainActivity, MainActivity::class.java)
+            val intent = Intent(this@MainActivity, MovieActivity::class.java)
             intent.putExtra("id", id)
             startActivity(intent)
         }
